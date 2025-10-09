@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hand Education Trust - A Helping Hand for a Bright Future</title>
+    <title>Helping Hand Education Trust - NGO in India for Education, Healthcare, Women Empowerment</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
     <style>
         * {
@@ -13,10 +13,9 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
         }
 
         .container {
@@ -27,306 +26,414 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        nav {
+        .header-top {
+            background: #f8f9fa;
+            padding: 8px 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 0;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
             align-items: center;
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 20px;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
+            color: #e74c3c;
+        }
+
+        .donate-btn {
+            background: #e74c3c;
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background: #c0392b;
             transform: translateY(-2px);
         }
 
         .lang-toggle {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: none;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 11px;
         }
 
-        .lang-toggle:hover {
-            background: rgba(255,255,255,0.3);
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 0,0 1000,100"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="%23667eea"><rect width="1200" height="600" fill="%23667eea"/><circle cx="200" cy="150" r="100" fill="%23764ba2" opacity="0.3"/><circle cx="1000" cy="450" r="150" fill="%23764ba2" opacity="0.2"/></svg>');
             background-size: cover;
+            background-position: center;
+            height: 78vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 50px;
+            position: relative;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
+            max-width: 600px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
-            animation: fadeInUp 1s ease 0.4s both;
+        .stats-bar {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
-        }
-
-        /* Mission Section */
-        .mission {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-        }
-
-        .mission-grid {
+        .stats-container {
+            height: 80px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
         }
 
-        .mission-card {
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .read-more {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .about-sidebar .highlight-box {
             background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Campaigns Section */
+        .campaigns {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .campaigns-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .campaign-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border: 1px solid rgba(102,126,234,0.1);
         }
 
-        .mission-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .campaign-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .mission-card .icon {
+        .campaign-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .campaign-content {
+            padding: 30px;
+        }
+
+        .campaign-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .campaign-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .know-more {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Awards Section */
+        .awards {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .award-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: #e74c3c;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin: 0 auto 20px;
             color: white;
+            font-size: 24px;
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .award-card h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        .services-grid {
+        .award-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Accreditations */
+        .accreditations {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .accred-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
         }
 
-        .service-card:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
+        .accred-item {
+            padding: 20px;
         }
 
-        /* Programs Section */
-        .programs {
-            padding: 80px 0;
-            background: #f8f9ff;
-        }
-
-        .program-tabs {
+        .accred-icon {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
+            margin: 0 auto 15px;
+            color: #e74c3c;
+            font-size: 30px;
         }
 
-        .tab-button {
-            background: white;
-            border: 2px solid #667eea;
-            color: #667eea;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .accred-item h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #333;
         }
 
-        .tab-button.active,
-        .tab-button:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .program-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
+        .accred-item p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
         }
 
         /* Footer */
         footer {
             background: #2c3e50;
             color: white;
-            padding: 2rem 0;
-            text-align: center;
+            padding: 60px 0 20px;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #e74c3c;
         }
 
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .services .section-title,
-        .contact .section-title {
+        .footer-section a:hover {
             color: white;
         }
 
-        .services .section-subtitle,
-        .contact .section-subtitle {
-            color: rgba(255,255,255,0.8);
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 12px;
+        }
+
+        /* Language Styles */
+        .lang-hindi, .lang-gujarati {
+            display: none;
+        }
+
+        body.hindi-active .lang-hindi {
+            display: block;
+        }
+
+        body.hindi-active .lang-english,
+        body.hindi-active .lang-gujarati {
+            display: none;
+        }
+
+        body.gujarati-active .lang-gujarati {
+            display: block;
+        }
+
+        body.gujarati-active .lang-english,
+        body.gujarati-active .lang-hindi {
+            display: none;
         }
 
         /* Responsive */
@@ -334,269 +441,479 @@
             .nav-links {
                 display: none;
             }
-            
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
-            
-            .hero p {
-                font-size: 1.1rem;
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
-            
-            .mission-grid,
-            .services-grid {
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .campaigns-grid,
+            .awards-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Hindi content styles */
-        .hindi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-        }
+            .accred-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-        /* Hide Hindi content by default */
-        .lang-hindi {
-            display: none;
-        }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
 
-        .lang-english {
-            display: block;
-        }
+            .header-content {
+                padding: 15px 0;
+            }
 
-        body.hindi-active .lang-hindi {
-            display: block;
-        }
-
-        body.hindi-active .lang-english {
-            display: none;
+            .logo {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">
-                <i data-lucide="heart-handshake"></i>
-                <span class="lang-english">Helping Hand Education Trust</span>
-                <span class="lang-hindi">हेल्पिंग हैंड एजुकेशन ट्रस्ट</span>
+        <div class="header-top">
+            <div class="container">
+                <span class="lang-english">REG F/18068 AHMEDABAD | REG NO- GUJ/18554/AHMEDABAD</span>
+                <span class="lang-hindi">REG F/18068 अहमदाबाद | REG NO- GUJ/18554/अहमदाबाद</span>
+                <span class="lang-gujarati">REG F/18068 અમદાવાદ | REG NO- GUJ/18554/અમદાવાદ</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="lang-english">Home</a><a href="#home" class="lang-hindi">होम</a></li>
-                <li><a href="#mission" class="lang-english">Mission</a><a href="#mission" class="lang-hindi">मिशन</a></li>
-                <li><a href="#services" class="lang-english">Services</a><a href="#services" class="lang-hindi">सेवाएं</a></li>
-                <li><a href="#programs" class="lang-english">Programs</a><a href="#programs" class="lang-hindi">कार्यक्रम</a></li>
-                <li><a href="#contact" class="lang-english">Contact</a><a href="#contact" class="lang-hindi">संपर्क</a></li>
-                <li><button class="lang-toggle" onclick="toggleLanguage()">हिंदी</button></li>
-            </ul>
-        </nav>
+        </div>
+        
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="heart-handshake"></i>
+                    <span class="lang-english">HELPING HAND EDUCATION TRUST</span>
+                    <span class="lang-hindi">हेल्पिंग हैंड एजुकेशन ट्रस्ट</span>
+                    <span class="lang-gujarati">હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ</span>
+                </div>
+                
+                <nav class="nav-links">
+                    <a href="#home" class="lang-english">HOME</a>
+                    <a href="#home" class="lang-hindi">होम</a>
+                    <a href="#home" class="lang-gujarati">હોમ</a>
+                    
+                    <a href="#about" class="lang-english">ABOUT US</a>
+                    <a href="#about" class="lang-hindi">हमारे बारे में</a>
+                    <a href="#about" class="lang-gujarati">અમારા વિશે</a>
+                    
+                    <a href="#campaigns" class="lang-english">OUR WORK</a>
+                    <a href="#campaigns" class="lang-hindi">हमारा काम</a>
+                    <a href="#campaigns" class="lang-gujarati">અમારું કાર્ય</a>
+                    
+                    <a href="#contact" class="lang-english">CONTACT</a>
+                    <a href="#contact" class="lang-hindi">संपर्क</a>
+                    <a href="#contact" class="lang-gujarati">સંપર્ક</a>
+                    
+                    <button class="lang-toggle" onclick="toggleLanguage()">हिंदी</button>
+                    
+                    <a href="#donate" class="donate-btn lang-english">DONATE NOW</a>
+                    <a href="#donate" class="donate-btn lang-hindi">अभी दान करें</a>
+                    <a href="#donate" class="donate-btn lang-gujarati">હવે દાન કરો</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" onclick="alert('Mobile menu - please implement if needed')">☰</button>
+            </div>
+        </div>
     </header>
 
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="lang-english">A Helping Hand for a Bright Future</h1>
-                <h1 class="lang-hindi">एक मददगार हाथ, उज्जवल भविष्य के लिए</h1>
+                <h1 class="lang-english">Empowering Lives Through Education & Care</h1>
+                <h1 class="lang-hindi">शिक्षा और देखभाल के माध्यम से जीवन को सशक्त बनाना</h1>
+                <h1 class="lang-gujarati">શિક્ષણ અને સંભાળ દ્વારા જીવનને સશક્ત બનાવવું</h1>
                 
-                <p class="lang-english">Empowering orphan and underprivileged children through free education and skill development programs</p>
-                <p class="lang-hindi">अनाथ और गरीब बच्चों को निःशुल्क शिक्षा और कौशल विकास कार्यक्रमों के माध्यम से सशक्त बनाना</p>
+                <p class="lang-english">Established in 2018, Helping Hand Education Trust is an Indian development organization, impacting the lives of thousands of children and their families. We have projects on education, healthcare, livelihood, and women empowerment across Gujarat and India.</p>
+                <p class="lang-hindi">2018 में स्थापित, हेल्पिंग हैंड एजुकेशन ट्रस्ट एक भारतीय विकास संगठन है, जो हजारों बच्चों और उनके परिवारों के जीवन को प्रभावित कर रहा है।</p>
+                <p class="lang-gujarati">2018 માં સ્થાપિત, હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ એક ભારતીય વિકાસ સંસ્થા છે, જે હજારો બાળકો અને તેમના પરિવારોના જીવનને અસર કરે છે.</p>
+            </div>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="container">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p class="lang-english">Children Educated</p>
+                        <p class="lang-hindi">शिक्षित बच्चे</p>
+                        <p class="lang-gujarati">શિક્ષિત બાળકો</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p class="lang-english">Projects</p>
+                        <p class="lang-hindi">प्रोजेक्ट्स</p>
+                        <p class="lang-gujarati">પ્રોજેક્ટ્સ</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>25+</h3>
+                        <p class="lang-english">Villages Reached</p>
+                        <p class="lang-hindi">गांव पहुंचे</p>
+                        <p class="lang-gujarati">ગામોમાં પહોંચ્યા</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5+</h3>
+                        <p class="lang-english">Years of Service</p>
+                        <p class="lang-hindi">सेवा के वर्ष</p>
+                        <p class="lang-gujarati">સેવાના વર્ષો</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="lang-english">Our Story</h2>
+                    <h2 class="lang-hindi">हमारी कहानी</h2>
+                    <h2 class="lang-gujarati">અમારી વાર્તા</h2>
+                    
+                    <p class="lang-english">Helping Hand Education Trust works as a catalyst in the cycle of change, complementing government efforts to achieve the Sustainable Development Goals. We sensitize and partner with like-minded institutions and individuals to implement high-impact programmes that enable access, enhance quality and help bring long term behavioural change at the grassroots.</p>
+                    <p class="lang-hindi">हेल्पिंग हैंड एजुकेशन ट्रस्ट परिवर्तन के चक्र में एक उत्प्रेरक के रूप में काम करता है, सतत विकास लक्ष्यों को प्राप्त करने के लिए सरकारी प्रयासों को पूरक बनाता है।</p>
+                    <p class="lang-gujarati">હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ પરિવર્તનના ચક્રમાં ઉત્પ્રેરક તરીકે કામ કરે છે, ટકાઉ વિકાસ લક્ષ્યો હાંસલ કરવા માટે સરકારી પ્રયાસોને પૂરક બનાવે છે.</p>
+                    
+                    <p class="lang-english">We focus on providing free education to orphan and underprivileged children from grade 5 to college level. Additionally, we offer skill training to widowed and single women, helping them become self-reliant and financially independent.</p>
+                    <p class="lang-hindi">हम अनाथ और वंचित बच्चों को कक्षा 5 से कॉलेज स्तर तक मुफ्त शिक्षा प्रदान करने पर ध्यान देते हैं। इसके अलावा, हम विधवा और एकल महिलाओं को कौशल प्रशिक्षण प्रदान करते हैं।</p>
+                    <p class="lang-gujarati">અમે 5મા ધોરણથી કોલેજ સ્તર સુધી અનાથ અને વંચિત બાળકોને મફત શિક્ષણ આપવા પર ધ્યાન આપીએ છીએ. વધુમાં, અમે વિધવા અને એકલ મહિલાઓને કૌશલ્ય તાલીમ આપીએ છીએ.</p>
+                    
+                    <a href="#" class="read-more lang-english">read more ></a>
+                    <a href="#" class="read-more lang-hindi">और पढ़ें ></a>
+                    <a href="#" class="read-more lang-gujarati">વધુ વાંચો ></a>
+                </div>
                 
-                <a href="#mission" class="cta-button lang-english">Learn More</a>
-                <a href="#mission" class="cta-button lang-hindi">और जानें</a>
+                <div class="about-sidebar">
+                    <div class="highlight-box">
+                        <h3 class="lang-english" style="color: #e74c3c; margin-bottom: 15px;">Our Mission</h3>
+                        <h3 class="lang-hindi" style="color: #e74c3c; margin-bottom: 15px;">हमारा मिशन</h3>
+                        <h3 class="lang-gujarati" style="color: #e74c3c; margin-bottom: 15px;">અમારું મિશન</h3>
+                        
+                        <p class="lang-english" style="font-size: 14px; line-height: 1.6;">To provide quality education and holistic development opportunities to underprivileged children while empowering women through skill development programs.</p>
+                        <p class="lang-hindi" style="font-size: 14px; line-height: 1.6;">वंचित बच्चों को गुणवत्तापूर्ण शिक्षा और समग्र विकास के अवसर प्रदान करना और महिलाओं को कौशल विकास कार्यक्रमों के माध्यम से सशक्त बनाना।</p>
+                        <p class="lang-gujarati" style="font-size: 14px; line-height: 1.6;">વંચિત બાળકોને ગુણવત્તાપૂર્ણ શિક્ષણ અને સર્વાંગી વિકાસની તકો પ્રદાન કરવી અને કૌશલ્ય વિકાસ કાર્યક્રમો દ્વારા મહિલાઓને સશક્ત બનાવવી.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="mission" class="mission">
+    <section id="campaigns" class="campaigns">
         <div class="container">
-            <h2 class="section-title lang-english">Our Mission</h2>
-            <h2 class="section-title lang-hindi">हमारा मिशन</h2>
+            <h2 class="section-title lang-english">Our Campaigns</h2>
+            <h2 class="section-title lang-hindi">हमारे अभियान</h2>
+            <h2 class="section-title lang-gujarati">અમારા અભિયાનો</h2>
             
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <div class="icon">
-                        <i data-lucide="graduation-cap"></i>
+            <div class="campaigns-grid">
+                <div class="campaign-card">
+                    <div class="campaign-image">
+                        <!-- <i data-lucide="graduation-cap"></i> -->
+                         🎓
                     </div>
-                    <h3 class="lang-english">Free Education</h3>
-                    <h3 class="lang-hindi">निःशुल्क शिक्षा</h3>
-                    
-                    <p class="lang-english">We provide complete free education to orphan and poor children from 5th grade to college level, ensuring no child is left behind due to financial constraints.</p>
-                    <p class="lang-hindi">हम अनाथ और गरीब बच्चों को पांचवीं कक्षा से लेकर कॉलेज तक की पूरी शिक्षा निःशुल्क प्रदान करते हैं।</p>
+                    <div class="campaign-content">
+                        <h3 class="lang-english">Shiksha Na Ruke</h3>
+                        <h3 class="lang-hindi">शिक्षा ना रुके</h3>
+                        <h3 class="lang-gujarati">શિક્ષા ના રુકે</h3>
+                        
+                        <p class="lang-english">Our flagship education initiative provides free education, accommodation, nutrition, and study materials to orphan and underprivileged children from grade 5 to college level.</p>
+                        <p class="lang-hindi">हमारी प्रमुख शिक्षा पहल अनाथ और वंचित बच्चों को कक्षा 5 से कॉलेज स्तर तक मुफ्त शिक्षा, आवास, पोषण और अध्ययन सामग्री प्रदान करती है।</p>
+                        <p class="lang-gujarati">અમારી મુખ્ય શિક્ષણ પહેલ અનાથ અને વંચિત બાળકોને 5મા ધોરણથી કોલેજ સ્તર સુધી મફત શિક્ષણ, આવાસ, પોષણ અને અભ્યાસ સામગ્રી પ્રદાન કરે છે.</p>
+                        
+                        <a href="#" class="know-more lang-english">know more > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-hindi">और जानें > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-gujarati">વધુ જાણો > <i data-lucide="arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="mission-card">
-                    <div class="icon">
-                        <i data-lucide="users"></i>
+                <div class="campaign-card">
+                    <div class="campaign-image">
+                        👥
+                        <!-- <i data-lucide="users"></i> -->
                     </div>
-                    <h3 class="lang-english">Women Empowerment</h3>
-                    <h3 class="lang-hindi">महिला सशक्तिकरण</h3>
-                    
-                    <p class="lang-english">We provide free skill training to widowed and single women, helping them become self-reliant and financially independent.</p>
-                    <p class="lang-hindi">हम विधवा और एकल महिलाओं को निःशुल्क कौशल प्रशिक्षण देकर उन्हें आत्मनिर्भर बनने में मदद करते हैं।</p>
+                    <div class="campaign-content">
+                        <h3 class="lang-english">She Can Fly</h3>
+                        <h3 class="lang-hindi">वह उड़ सकती है</h3>
+                        <h3 class="lang-gujarati">તે ઉડી શકે છે</h3>
+                        
+                        <p class="lang-english">Our women empowerment initiative provides free skill training to widowed and single women, helping them become self-reliant and financially independent through various vocational programs.</p>
+                        <p class="lang-hindi">हमारी महिला सशक्तिकरण पहल विधवा और एकल महिलाओं को मुफ्त कौशल प्रशिक्षण प्रदान करती है, जिससे वे विभिन्न व्यावसायिक कार्यक्रमों के माध्यम से आत्मनिर्भर बन सकें।</p>
+                        <p class="lang-gujarati">અમારી મહિલા સશક્તિકરણ પહેલ વિધવા અને એકલ મહિલાઓને મફત કૌશલ્ય તાલીમ આપે છે, જેથી તેઓ વિવિધ વ્યાવસાયિક કાર્યક્રમો દ્વારા આત્મનિર્ભર બની શકે.</p>
+                        
+                        <a href="#" class="know-more lang-english">know more > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-hindi">और जानें > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-gujarati">વધુ જાણો > <i data-lucide="arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="mission-card">
-                    <div class="icon">
-                        <i data-lucide="trophy"></i>
+                <div class="campaign-card">
+                    <div class="campaign-image">
+                        <!-- <i data-lucide="trophy"></i> -->
+                         🏆
                     </div>
-                    <h3 class="lang-english">Sports Excellence</h3>
-                    <h3 class="lang-hindi">खेल उत्कृष्टता</h3>
-                    
-                    <p class="lang-english">Our goal is to prepare poor and orphan children for Olympic-level competitions through dedicated sports training programs.</p>
-                    <p class="lang-hindi">हमारा उद्देश्य गरीब और अनाथ बच्चों को ओलंपिक स्तर पर खेलने योग्य बनाना है।</p>
+                    <div class="campaign-content">
+                        <h3 class="lang-english">Sports Excellence</h3>
+                        <h3 class="lang-hindi">खेल उत्कृष्टता</h3>
+                        <h3 class="lang-gujarati">રમતગમતની ઉત્કૃષ્ટતા</h3>
+                        
+                        <p class="lang-english">Our sports training program aims to prepare underprivileged children for Olympic-level competitions through dedicated training in athletics, wrestling, boxing, badminton, tennis, hockey, and football.</p>
+                        <p class="lang-hindi">हमारा खेल प्रशिक्षण कार्यक्रम वंचित बच्चों को एथलेटिक्स, कुश्ती, बॉक्सिंग, बैडमिंटन, टेनिस, हॉकी और फुटबॉल में समर्पित प्रशिक्षण के माध्यम से ओलंपिक स्तर की प्रतियोगिताओं के लिए तैयार करता है।</p>
+                        <p class="lang-gujarati">અમારો રમતગમત તાલીમ કાર્યક્રમ વંચિત બાળકોને એથ્લેટિક્સ, કુસ્તી, બોક્સિંગ, બેડમિંટન, ટેનિસ, હોકી અને ફુટબોલમાં સમર્પિત તાલીમ દ્વારા ઓલિમ્પિક સ્તરની સ્પર્ધાઓ માટે તૈયાર કરવાનો છે.</p>
+                        
+                        <a href="#" class="know-more lang-english">know more > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-hindi">और जानें > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-gujarati">વધુ જાણો > <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="campaign-card">
+                    <div class="campaign-image">
+                        <!-- <i data-lucide="heart"></i> -->
+                         ❤️
+                    </div>
+                    <div class="campaign-content">
+                        <h3 class="lang-english">Gurukul Wellness</h3>
+                        <h3 class="lang-hindi">गुरुकुल कल्याण</h3>
+                        <h3 class="lang-gujarati">ગુરુકુળ કલ્યાણ</h3>
+                        
+                        <p class="lang-english">Combining ancient Indian educational values with modern facilities, our Gurukul system provides holistic development including yoga, moral education, and character building alongside academic excellence.</p>
+                        <p class="lang-hindi">प्राचीन भारतीय शैक्षिक मूल्यों को आधुनिक सुविधाओं के साथ मिलाकर, हमारी गुरुकुल प्रणाली शैक्षणिक उत्कृष्टता के साथ योग, नैतिक शिक्षा और चरित्र निर्माण सहित समग्र विकास प्रदान करती है।</p>
+                        <p class="lang-gujarati">પ્રાચીન ભારતીય શૈક્ષણિક મૂલ્યોને આધુનિક સુવિધાઓ સાથે જોડીને, અમારી ગુરુકુળ પ્રણાલી શૈક્ષણિક શ્રેષ્ઠતા સાથે યોગ, નૈતિક શિક્ષણ અને ચારિત્ર્ય નિર્માણ સહિત સર્વાંગી વિકાસ પ્રદાન કરે છે.</p>
+                        
+                        <a href="#" class="know-more lang-english">know more > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-hindi">और जानें > <i data-lucide="arrow-right"></i></a>
+                        <a href="#" class="know-more lang-gujarati">વધુ જાણો > <i data-lucide="arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section class="awards">
         <div class="container">
-            <h2 class="section-title lang-english">Our Services</h2>
-            <h2 class="section-title lang-hindi">हमारी सेवाएं</h2>
+            <h2 class="section-title lang-english">Recognition & Awards</h2>
+            <h2 class="section-title lang-hindi">मान्यता और पुरस्कार</h2>
+            <h2 class="section-title lang-gujarati">માન્યતા અને પુરસ્કારો</h2>
             
-            <p class="section-subtitle lang-english">"Every child has the right to education. Every woman deserves a better future."</p>
-            <p class="section-subtitle lang-hindi">"हर बच्चे को पढ़ने का हक है। हर महिला को एक बेहतर भविष्य का अधिकार है।"</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <i data-lucide="home" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Accommodation</h3>
-                    <h3 class="lang-hindi">आवास</h3>
-                    <p class="lang-english">Free residential facilities for children</p>
-                    <p class="lang-hindi">बच्चों के लिए निःशुल्क आवास सुविधा</p>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <!-- <i data-lucide="award"></i> -->
+                         🏆
+                    </div>
+                    <h4 class="lang-english">Excellence in Education Award 2023</h4>
+                    <h4 class="lang-hindi">शिक्षा उत्कृष्टता पुरस्कार 2023</h4>
+                    <h4 class="lang-gujarati">શિક્ષણ શ્રેષ્ઠતા પુરસ્કાર 2023</h4>
+                    
+                    <p class="lang-english">Recognized for outstanding contribution to education and skill development in underprivileged communities across Gujarat.</p>
+                    <p class="lang-hindi">गुजरात में वंचित समुदायों में शिक्षा और कौशल विकास में उत्कृष्ट योगदान के लिए मान्यता।</p>
+                    <p class="lang-gujarati">ગુજરાતમાં વંચિત સમુદાયોમાં શિક્ષણ અને કૌશલ્ય વિકાસમાં ઉત્કૃષ્ટ યોગદાન માટે માન્યતા.</p>
                 </div>
 
-                <div class="service-card">
-                    <i data-lucide="utensils" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Nutrition</h3>
-                    <h3 class="lang-hindi">भोजन</h3>
-                    <p class="lang-english">Nutritious meals for healthy development</p>
-                    <p class="lang-hindi">स्वस्थ विकास के लिए पौष्टिक भोजन</p>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <!-- <i data-lucide="shield-check"></i> -->
+                         🛡
+                    </div>
+                    <h4 class="lang-english">Women Empowerment Champion 2024</h4>
+                    <h4 class="lang-hindi">महिला सशक्तिकरण चैंपियन 2024</h4>
+                    <h4 class="lang-gujarati">મહિલા સશક્તિકરણ ચેમ્પિયન 2024</h4>
+                    
+                    <p class="lang-english">Honored for exceptional work in empowering women through skill training and creating sustainable livelihood opportunities.</p>
+                    <p class="lang-hindi">कौशल प्रशिक्षण और टिकाऊ आजीविका के अवसर सृजित करने के माध्यम से महिलाओं को सशक्त बनाने के असाधारण कार्य के लिए सम्मानित।</p>
+                    <p class="lang-gujarati">કૌશલ્ય તાલીમ અને ટકાઉ આજીવિકાની તકો સર્જવા દ્વારા મહિલાઓને સશક્ત બનાવવાના અસાધારણ કાર્ય માટે સન્માનિત.</p>
                 </div>
 
-                <div class="service-card">
-                    <i data-lucide="book-open" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Library</h3>
-                    <h3 class="lang-hindi">पुस्तकालय</h3>
-                    <p class="lang-english">Free library with textbooks and competitive exam materials</p>
-                    <p class="lang-hindi">पाठ्यपुस्तकें और प्रतियोगी परीक्षा सामग्री के साथ निःशुल्क पुस्तकालय</p>
-                </div>
-
-                <div class="service-card">
-                    <i data-lucide="computer" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Computer Education</h3>
-                    <h3 class="lang-hindi">कंप्यूटर शिक्षा</h3>
-                    <p class="lang-english">Digital literacy for future readiness</p>
-                    <p class="lang-hindi">भविष्य की तैयारी के लिए डिजिटल साक्षरता</p>
-                </div>
-
-                <div class="service-card">
-                    <i data-lucide="heart" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Values & Ethics</h3>
-                    <h3 class="lang-hindi">संस्कार</h3>
-                    <p class="lang-english">Character building and moral education</p>
-                    <p class="lang-hindi">चरित्र निर्माण और नैतिक शिक्षा</p>
-                </div>
-
-                <div class="service-card">
-                    <i data-lucide="activity" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Yoga Center</h3>
-                    <h3 class="lang-hindi">योग केंद्र</h3>
-                    <p class="lang-english">Free yoga classes for physical and mental wellness</p>
-                    <p class="lang-hindi">शारीरिक और मानसिक स्वास्थ्य के लिए निःशुल्क योग कक्षाएं</p>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <!-- <i data-lucide="star"></i> -->
+                         🌟
+                    </div>
+                    <h4 class="lang-english">Social Impact Innovation Award</h4>
+                    <h4 class="lang-hindi">सामाजिक प्रभाव नवाचार पुरस्कार</h4>
+                    <h4 class="lang-gujarati">સામાજિક પ્રભાવ નવીનતા પુરસ્કાર</h4>
+                    
+                    <p class="lang-english">Recognized for innovative approaches in combining traditional Gurukul education with modern technology and sports training.</p>
+                    <p class="lang-hindi">पारंपरिक गुरुकुल शिक्षा को आधुनिक तकनीक और खेल प्रशिक्षण के साथ जोड़ने के नवाचार भरे दृष्टिकोण के लिए मान्यता।</p>
+                    <p class="lang-gujarati">પરંપરાગત ગુરુકુળ શિક્ષણને આધુનિક ટેકનોલોજી અને રમતગમત તાલીમ સાથે જોડવાના નવીન અભિગમ માટે માન્યતા.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="programs" class="programs">
+    <section class="accreditations">
         <div class="container">
-            <h2 class="section-title lang-english">Our Programs</h2>
-            <h2 class="section-title lang-hindi">हमारे कार्यक्रम</h2>
-
-            <div class="program-tabs">
-                <button class="tab-button active" onclick="showTab('education')">
-                    <span class="lang-english">Education</span>
-                    <span class="lang-hindi">शिक्षा</span>
-                </button>
-                <button class="tab-button" onclick="showTab('sports')">
-                    <span class="lang-english">Sports</span>
-                    <span class="lang-hindi">खेल</span>
-                </button>
-                <button class="tab-button" onclick="showTab('gurukul')">
-                    <span class="lang-english">Gurukul</span>
-                    <span class="lang-hindi">गुरुकुल</span>
-                </button>
-            </div>
-
-            <div id="education" class="tab-content active">
-                <div class="program-content">
-                    <h3 class="lang-english">Modern Education Program</h3>
-                    <h3 class="lang-hindi">आधुनिक शिक्षा कार्यक्रम</h3>
+            <h2 class="section-title lang-english">Accreditations & Memberships</h2>
+            <h2 class="section-title lang-hindi">मान्यता और सदस्यता</h2>
+            <h2 class="section-title lang-gujarati">માન્યતા અને સદસ્યતા</h2>
+            
+            <div class="accred-grid">
+                <div class="accred-item">
+                    <div class="accred-icon">
+                        <!-- <i data-lucide="check-circle"></i> -->
+                         ⭕
+                    </div>
+                    <h4 class="lang-english">Registered NGO</h4>
+                    <h4 class="lang-hindi">पंजीकृत एनजीओ</h4>
+                    <h4 class="lang-gujarati">નોંધાયેલ એનજીઓ</h4>
                     
-                    <p class="lang-english">Our comprehensive education program covers all subjects from grade 5 to college level. We provide textbooks, uniforms, shoes, and all necessary materials free of cost. Our focus is on creating digitally literate students who can contribute to building Digital India.</p>
-                    <p class="lang-hindi">हमारा व्यापक शिक्षा कार्यक्रम 5वीं कक्षा से कॉलेज स्तर तक सभी विषयों को कवर करता है। हम पुस्तकें, यूनिफॉर्म, जूते और सभी आवश्यक सामग्री निःशुल्क प्रदान करते हैं।</p>
+                    <p class="lang-english">Officially registered under the Gujarat government with all necessary compliance and transparency measures.</p>
+                    <p class="lang-hindi">गुजरात सरकार के तहत आधिकारिक रूप से पंजीकृत सभी आवश्यक अनुपालन और पारदर्शिता उपायों के साथ।</p>
+                    <p class="lang-gujarati">ગુજરાત સરકાર હેઠળ અધિકૃત રીતે નોંધાયેલ તમામ જરૂરી અનુપાલન અને પારદર્શિતા પગલાં સાથે.</p>
                 </div>
-            </div>
 
-            <div id="sports" class="tab-content">
-                <div class="program-content">
-                    <h3 class="lang-english">Olympic Sports Training</h3>
-                    <h3 class="lang-hindi">ओलंपिक खेल प्रशिक्षण</h3>
+                <div class="accred-item">
+                    <div class="accred-icon">
+                        <!-- <i data-lucide="globe"></i> -->
+                         🌎
+                    </div>
+                    <h4 class="lang-english">ISO Certified</h4>
+                    <h4 class="lang-hindi">आईएसओ प्रमाणित</h4>
+                    <h4 class="lang-gujarati">આઇએસઓ પ્રમાણિત</h4>
                     
-                    <p class="lang-english">We offer professional training in Athletics, Wrestling, Boxing, Badminton, Tennis, Hockey, and Football. Our mission is to prepare children for Olympic Games, Asian Games, and other international competitions.</p>
-                    <p class="lang-hindi">हम एथलेटिक्स, कुश्ती, बॉक्सिंग, बैडमिंटन, टेनिस, हॉकी और फुटबॉल में पेशेवर प्रशिक्षण प्रदान करते हैं।</p>
+                    <p class="lang-english">Quality management system certification ensuring highest standards in our educational and social programs.</p>
+                    <p class="lang-hindi">गुणवत्ता प्रबंधन प्रणाली प्रमाणन हमारे शैक्षिक और सामाजिक कार्यक्रमों में उच्चतम मानक सुनिश्चित करता है।</p>
+                    <p class="lang-gujarati">ગુણવત્તા વ્યવસ્થાપન પ્રણાલી પ્રમાણપત્ર અમારા શૈક્ષણિક અને સામાજિક કાર્યક્રમોમાં સર્વોચ્ચ ધોરણો સુનિશ્ચિત કરે છે.</p>
                 </div>
-            </div>
 
-            <div id="gurukul" class="tab-content">
-                <div class="program-content">
-                    <h3 class="lang-english">Gurukul Education System</h3>
-                    <h3 class="lang-hindi">गुरुकुल शिक्षा प्रणाली</h3>
+                <div class="accred-item">
+                    <div class="accred-icon">
+                        <!-- <i data-lucide="heart-handshake"></i> -->
+                         🤝
+                    </div>
+                    <h4 class="lang-english">FCRA Approved</h4>
+                    <h4 class="lang-hindi">एफसीआरए स्वीकृत</h4>
+                    <h4 class="lang-gujarati">એફસીઆરએ મંજૂર</h4>
                     
-                    <p class="lang-english">We combine ancient Indian educational values with modern technology. Our Gurukul system teaches children life values, ethics, and moral principles along with academic subjects, creating well-rounded individuals.</p>
-                    <p class="lang-hindi">हम प्राचीन भारतीय शैक्षिक मूल्यों को आधुनिक तकनीक के साथ जोड़ते हैं। हमारी गुरुकुल प्रणाली बच्चों को जीवन मूल्य, नैतिकता और सिद्धांत सिखाती है।</p>
+                    <p class="lang-english">Foreign Contribution Regulation Act approval enabling international partnerships and funding.</p>
+                    <p class="lang-hindi">विदेशी अंशदान नियमन अधिनियम अनुमोदन अंतर्राष्ट्रीय साझेदारी और फंडिंग को सक्षम बनाता है।</p>
+                    <p class="lang-gujarati">વિદેશી યોગદાન નિયમન કાયદો મંજૂરી આંતરરાષ્ટ્રીય ભાગીદારી અને ભંડોળને સક્ષમ બનાવે છે.</p>
+                </div>
+
+                <div class="accred-item">
+                    <div class="accred-icon">
+                        <!-- <i data-lucide="verified"></i> -->
+                         ✅
+                    </div>
+                    <h4 class="lang-english">80G Certified</h4>
+                    <h4 class="lang-hindi">80जी प्रमाणित</h4>
+                    <h4 class="lang-gujarati">80જી પ્રમાણિત</h4>
+                    
+                    <p class="lang-english">Income Tax Act certification allowing donors to claim tax benefits for their contributions to our cause.</p>
+                    <p class="lang-hindi">आयकर अधिनियम प्रमाणन दाताओं को हमारे कारण के लिए उनके योगदान के लिए कर लाभ का दावा करने की अनुमति देता है।</p>
+                    <p class="lang-gujarati">આયકર કાયદો પ્રમાણપત્ર દાતાઓને અમારા કારણ માટે તેમના યોગદાન માટે કર લાભનો દાવો કરવાની મંજૂરી આપે છે.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <footer id="contact">
         <div class="container">
-            <h2 class="section-title lang-english">Contact Us</h2>
-            <h2 class="section-title lang-hindi">संपर्क करें</h2>
-
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i data-lucide="map-pin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Address</h3>
-                    <h3 class="lang-hindi">पता</h3>
-                    <p class="lang-english">5th Floor - A 506, Premium House, Nehru Bridge, Ashram Road, Opposite Gandhi Gram Railway Station, Ellis Bridge, Ahmedabad, Gujarat - 380009</p>
-                    <p class="lang-hindi">5वीं मंजिल - ए 506, प्रीमियम हाउस, नेहरू ब्रिज, आश्रम रोड, गांधी ग्राम रेलवे स्टेशन के सामने, एलिसब्रिज, अहमदाबाद, गुजरात - 380009</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="lang-english">Contact Us</h3>
+                    <h3 class="lang-hindi">संपर्क करें</h3>
+                    <h3 class="lang-gujarati">અમારો સંપર્ક કરો</h3>
+                    
+                    <p class="lang-english">5th Floor - A 506, Premium House<br>
+                    Nehru Bridge, Ashram Road<br>
+                    Opposite Gandhi Gram Railway Station<br>
+                    Ellis Bridge, Ahmedabad<br>
+                    Gujarat - 380009</p>
+                    
+                    <p class="lang-hindi">5वीं मंजिल - ए 506, प्रीमियम हाउस<br>
+                    नेहरू ब्रिज, आश्रम रोड<br>
+                    गांधी ग्राम रेलवे स्टेशन के सामने<br>
+                    एलिस ब्रिज, अहमदाबाद<br>
+                    गुजरात - 380009</p>
+                    
+                    <p class="lang-gujarati">5મી મંજિલ - એ 506, પ્રીમિયમ હાઉસ<br>
+                    નેહરુ બ્રિજ, આશ્રમ રોડ<br>
+                    ગાંધી ગ્રામ રેલવે સ્ટેશનની સામે<br>
+                    એલિસ બ્રિજ, અમદાવાદ<br>
+                    ગુજરાત - 380009</p>
                 </div>
 
-                <div class="contact-card">
-                    <i data-lucide="file-text" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 class="lang-english">Registration</h3>
-                    <h3 class="lang-hindi">पंजीकरण</h3>
-                    <p>REG F/18068 AHMEDABAD</p>
-                    <p>REG NO- GUJ/18554/AHMEDABAD</p>
+                <div class="footer-section">
+                    <h3 class="lang-english">Our Work</h3>
+                    <h3 class="lang-hindi">हमारा काम</h3>
+                    <h3 class="lang-gujarati">અમારું કાર્ય</h3>
+                    
+                    <a href="#" class="lang-english">Education</a>
+                    <a href="#" class="lang-hindi">शिक्षा</a>
+                    <a href="#" class="lang-gujarati">શિક્ષણ</a><br>
+                    
+                    <a href="#" class="lang-english">Women Empowerment</a>
+                    <a href="#" class="lang-hindi">महिला सशक्तिकरण</a>
+                    <a href="#" class="lang-gujarati">મહિલા સશક્તિકરણ</a><br>
+                    
+                    <a href="#" class="lang-english">Sports Training</a>
+                    <a href="#" class="lang-hindi">खेल प्रशिक्षण</a>
+                    <a href="#" class="lang-gujarati">રમતગમત તાલીમ</a><br>
+                    
+                    <a href="#" class="lang-english">Healthcare</a>
+                    <a href="#" class="lang-hindi">स्वास्थ्य सेवा</a>
+                    <a href="#" class="lang-gujarati">આરોગ્ય સેવા</a>
                 </div>
 
-                <div class="contact-card">
-                    <i data-lucide="mail" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="footer-section">
                     <h3 class="lang-english">Get Involved</h3>
-                    <h3 class="lang-hindi">जुड़ें</h3>
-                    <p class="lang-english">Join us in our mission to educate and empower underprivileged children</p>
-                    <p class="lang-hindi">गरीब बच्चों को शिक्षित और सशक्त बनाने के हमारे मिशन में शामिल हों</p>
+                    <h3 class="lang-hindi">शामिल हों</h3>
+                    <h3 class="lang-gujarati">જોડાઓ</h3>
+                    
+                    <a href="#" class="lang-english">Volunteer</a>
+                    <a href="#" class="lang-hindi">स्वयंसेवक</a>
+                    <a href="#" class="lang-gujarati">સ્વયંસેવક</a><br>
+                    
+                    <a href="#" class="lang-english">Donate</a>
+                    <a href="#" class="lang-hindi">दान करें</a>
+                    <a href="#" class="lang-gujarati">દાન કરો</a><br>
+                    
+                    <a href="#" class="lang-english">Partner with Us</a>
+                    <a href="#" class="lang-hindi">हमारे साथ जुड़ें</a>
+                    <a href="#" class="lang-gujarati">અમારી સાથે જોડાઓ</a><br>
+                    
+                    <a href="#" class="lang-english">Careers</a>
+                    <a href="#" class="lang-hindi">करियर</a>
+                    <a href="#" class="lang-gujarati">કારકિર્દી</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="lang-english">Follow Us</h3>
+                    <h3 class="lang-hindi">हमें फॉलो करें</h3>
+                    <h3 class="lang-gujarati">અમને ફોલો કરો</h3>
+                    
+                    <p class="lang-english">Stay connected with our work and impact</p>
+                    <p class="lang-hindi">हमारे काम और प्रभाव से जुड़े रहें</p>
+                    <p class="lang-gujarati">અમારા કાર્ય અને પ્રભાવ સાથે જોડાયેલા રહો</p>
+                    
+                    <div style="margin-top: 15px;">
+                        <a href="#" style="margin-right: 15px; font-size: 20px;">📘</a>
+                        <a href="#" style="margin-right: 15px; font-size: 20px;">📷</a>
+                        <a href="#" style="margin-right: 15px; font-size: 20px;">🐦</a>
+                        <a href="#" style="font-size: 20px;">📺</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p class="lang-english">&copy; 2024 Helping Hand Education Trust. All rights reserved. Making a difference, one child at a time.</p>
-            <p class="lang-hindi">&copy; 2024 हेल्पिंग हैंड एजुकेशन ट्रस्ट। सभी अधिकार सुरक्षित। एक-एक बच्चे के साथ बदलाव लाना।</p>
+            
+            <div class="footer-bottom">
+                <p class="lang-english">&copy; 2024 Helping Hand Education Trust. All rights reserved. Making a difference.</p>
+                <p class="lang-hindi">&copy; 2024 हेल्पिंग हैंड एजुकेशन ट्रस्ट। सभी अधिकार सुरक्षित। एक-एक बच्चे के साथ बदलाव लाना।</p>
+                <p class="lang-gujarati">&copy; 2024 હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ. બધા હક્કો આરક્ષિત. એક સમયે એક બાળક સાથે ફેરફાર લાવવો.</p>
+            </div>
         </div>
     </footer>
 
@@ -604,50 +921,123 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Language toggle functionality
         function toggleLanguage() {
-            const body = document.body;
-            const toggleBtn = document.querySelector('.lang-toggle');
-            
-            body.classList.toggle('hindi-active');
-            
-            if (body.classList.contains('hindi-active')) {
-                toggleBtn.textContent = 'English';
-            } else {
-                toggleBtn.textContent = 'हिंदी';
-            }
-        }
+    const body = document.body;
+    const toggleBtn = document.querySelector('.lang-toggle');
 
-        // Tab functionality
-        function showTab(tabName) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
+    if (!toggleBtn) {
+        console.error("Language toggle button not found!");
+        return;
+    }
+
+    // Define the language cycle
+    const languageCycle = [
+        { className: '', buttonText: 'हिंदी' }, // Default (English)
+        { className: 'hindi-active', buttonText: 'ગુજરાતી' },
+        { className: 'gujarati-active', buttonText: 'English' },
+    ];
+
+    // Find the current language index
+    let currentIndex = 0;
+    if (body.classList.contains('hindi-active')) {
+        currentIndex = 1;
+    } else if (body.classList.contains('gujarati-active')) {
+        currentIndex = 2;
+    }
+
+    // Calculate the next language index
+    const nextIndex = (currentIndex + 1) % languageCycle.length;
+
+    // Remove all language classes
+    body.classList.remove('hindi-active', 'gujarati-active');
+
+    // Add the next language class (if not default)
+    if (languageCycle[nextIndex].className) {
+        body.classList.add(languageCycle[nextIndex].className);
+    }
+
+    // Update the button text
+    toggleBtn.textContent = languageCycle[nextIndex].buttonText;
+}
+
+
+//         // Language functionality
+//         let currentLanguage = 'english';
+
+//         function toggleLanguage() {
+//     const body = document.body;
+//     const toggleBtn = document.querySelector('.lang-toggle');
+
+//     // If no toggle button is found, exit the function
+//     if (!toggleBtn) {
+//         console.error("Language toggle button not found!");
+//         return;
+//     }
+
+//     // Check the current language and toggle accordingly
+//     if (body.classList.contains('hindi-active')) {
+//         body.classList.remove('hindi-active');
+//         body.classList.add('gujarati-active');
+//         toggleBtn.textContent = 'English';
+//     }
+//     else if (body.classList.contains('gujarati-active')) {
+//         body.classList.remove('gujarati-active');
+//         toggleBtn.textContent = 'ગુજરાતી';
+//     }
+//     else {
+//         body.classList.add('hindi-active');
+//         toggleBtn.textContent = 'हिंदी';
+//     }
+// }
+
+
+        // function toggleLanguage() {
+        //     const body = document.body;
+        //     const toggleBtn = document.querySelector('.lang-toggle');
             
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
+        //     // Remove all language classes first
+        //     body.classList.remove('hindi-active', 'gujarati-active');
+        //     if (body.classList.contains('hindi-active')) {
+        //     body.classList.remove('hindi-active');
+        //     body.classList.add('gujarati-active');
+        //     toggleBtn.textContent = 'English';
+        //      } else if (body.classList.contains('gujarati-active')) {
+        //      body.classList.remove('gujarati-active');
+        //     toggleBtn.textContent = 'ગુજરાતી';
+        //      } else {
+        //  body.classList.add('hindi-active');
+        //    toggleBtn.textContent = 'ગુજરાતી';
+        // }
+        //     // if (currentLanguage === 'english') {
+        //     //     body.classList.add('hindi-active');
+        //     //     toggleBtn.textContent = 'ગુજરાતી';
+        //     //     currentLanguage = 'hindi';
+        //     // } else if (currentLanguage === 'hindi') {
+        //     //     body.classList.add('gujarati-active');
+        //     //     toggleBtn.textContent = 'English';
+        //     //     currentLanguage = 'gujarati';
+        //     // } else {
+        //     //     // Already removed classes above, so now showing English
+        //     //     toggleBtn.textContent = 'हिंदी';
+        //     //     currentLanguage = 'english';
+        //     // }
             
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
+        //     console.log('Current language:', currentLanguage); // For debugging
+        // }
 
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         });
 
@@ -665,10 +1055,38 @@
             });
         }, observerOptions);
 
-        // Observe mission cards and service cards
-        document.querySelectorAll('.mission-card, .service-card, .contact-card').forEach(card => {
+        // Observe cards for animation
+        document.querySelectorAll('.campaign-card, .award-card, .accred-item').forEach(card => {
             observer.observe(card);
         });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add fadeInUp animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
