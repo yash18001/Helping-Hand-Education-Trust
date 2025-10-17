@@ -194,34 +194,6 @@
         }
       }
 
-      /* .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="%23667eea"><rect width="1200" height="600" fill="%23667eea"/><circle cx="200" cy="150" r="100" fill="%23764ba2" opacity="0.3"/><circle cx="1000" cy="450" r="150" fill="%23764ba2" opacity="0.2"/></svg>');
-            background-size: cover;
-            background-position: center;
-            height: 75vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            margin-top: 0px;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        } */
-
       .stats-bar {
         background: rgba(255, 255, 255, 0.9);
         color: #333;
@@ -284,36 +256,6 @@
           grid-template-columns: 1fr; /* 1 column on very small screens */
         }
       }
-
-      /* .stats-bar {
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            padding: 5px 0;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .stats-container {
-            height: 80px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            color: #e74c3c;
-            margin-bottom: 5px;
-        }
-
-        .stat-item p {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #666;
-        } */
 
       /* About Section */
       .about {
@@ -401,10 +343,10 @@
       }
 
       .campaign-image img {
-        width: 100%; /* makes the image fill the container width */
-        height: 100%; /* makes the image fill the container height */
-        object-fit: cover; /* ensures the image covers the area without distortion */
-        border-radius: 8px 8px 0 0; /* optional: rounds the top corners */
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
       }
 
       .campaign-content {
@@ -638,13 +580,6 @@
   </head>
   <body>
     <header>
-      <!-- <div class="header-top">
-            <div class="container">
-                <span class="lang-english">REG F/18068 AHMEDABAD | REG NO- GUJ/18554/AHMEDABAD</span>
-                <span class="lang-hindi">REG F/18068 अहमदाबाद | REG NO- GUJ/18554/अहमदाबाद</span>
-                <span class="lang-gujarati">REG F/18068 અમદાવાદ | REG NO- GUJ/18554/અમદાવાદ</span>
-            </div>
-        </div> -->
 
       <div class="container">
         <div class="header-content">
@@ -1382,69 +1317,6 @@
         // Update the button text
         toggleBtn.textContent = languageCycle[nextIndex].buttonText;
       }
-
-      //         // Language functionality
-      //         let currentLanguage = 'english';
-
-      //         function toggleLanguage() {
-      //     const body = document.body;
-      //     const toggleBtn = document.querySelector('.lang-toggle');
-
-      //     // If no toggle button is found, exit the function
-      //     if (!toggleBtn) {
-      //         console.error("Language toggle button not found!");
-      //         return;
-      //     }
-
-      //     // Check the current language and toggle accordingly
-      //     if (body.classList.contains('hindi-active')) {
-      //         body.classList.remove('hindi-active');
-      //         body.classList.add('gujarati-active');
-      //         toggleBtn.textContent = 'English';
-      //     }
-      //     else if (body.classList.contains('gujarati-active')) {
-      //         body.classList.remove('gujarati-active');
-      //         toggleBtn.textContent = 'ગુજરાતી';
-      //     }
-      //     else {
-      //         body.classList.add('hindi-active');
-      //         toggleBtn.textContent = 'हिंदी';
-      //     }
-      // }
-
-      // function toggleLanguage() {
-      //     const body = document.body;
-      //     const toggleBtn = document.querySelector('.lang-toggle');
-
-      //     // Remove all language classes first
-      //     body.classList.remove('hindi-active', 'gujarati-active');
-      //     if (body.classList.contains('hindi-active')) {
-      //     body.classList.remove('hindi-active');
-      //     body.classList.add('gujarati-active');
-      //     toggleBtn.textContent = 'English';
-      //      } else if (body.classList.contains('gujarati-active')) {
-      //      body.classList.remove('gujarati-active');
-      //     toggleBtn.textContent = 'ગુજરાતી';
-      //      } else {
-      //  body.classList.add('hindi-active');
-      //    toggleBtn.textContent = 'ગુજરાતી';
-      // }
-      //     // if (currentLanguage === 'english') {
-      //     //     body.classList.add('hindi-active');
-      //     //     toggleBtn.textContent = 'ગુજરાતી';
-      //     //     currentLanguage = 'hindi';
-      //     // } else if (currentLanguage === 'hindi') {
-      //     //     body.classList.add('gujarati-active');
-      //     //     toggleBtn.textContent = 'English';
-      //     //     currentLanguage = 'gujarati';
-      //     // } else {
-      //     //     // Already removed classes above, so now showing English
-      //     //     toggleBtn.textContent = 'हिंदी';
-      //     //     currentLanguage = 'english';
-      //     // }
-
-      //     console.log('Current language:', currentLanguage); // For debugging
-      // }
 
       // Smooth scrolling for navigation links
       document.addEventListener("DOMContentLoaded", function () {
