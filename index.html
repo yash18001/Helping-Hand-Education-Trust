@@ -98,6 +98,103 @@
         transform: translateY(-2px);
       }
 
+      /* Popup Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        animation: slideIn 0.3s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .modal-header h2 {
+        margin: 0;
+        color: #333;
+        font-size: 24px;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+        transition: color 0.2s;
+      }
+
+      .close-btn:hover {
+        color: #333;
+      }
+
+      .qr-image {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border: 2px solid #e74c3c;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      .modal-text {
+        color: #666;
+        margin: 15px 0;
+        font-size: 14px;
+      }
+
+      .close-modal-btn {
+        background: #e74c3c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .close-modal-btn:hover {
+        background: #c0392b;
+      }
+
       .lang-toggle {
         background: none;
         border: 1px solid #ddd;
@@ -124,7 +221,7 @@
           url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="%23667eea"><rect width="1200" height="600" fill="%23667eea"/><circle cx="200" cy="150" r="100" fill="%23764ba2" opacity="0.3"/><circle cx="1000" cy="450" r="150" fill="%23764ba2" opacity="0.2"/></svg>');
         background-size: cover;
         background-position: center;
-        min-height: 100vh; /* Use min-height instead of fixed height */
+        min-height: 90vh; /* Use min-height instead of fixed height */
         display: flex;
         align-items: center;
         justify-content: center; /* Center content horizontally */
@@ -139,6 +236,7 @@
       .hero-content {
         max-width: 900px; /* Wider max-width for better readability */
         width: 100%;
+        height: auto;
         padding: 0 1rem;
         z-index: 2; /* Ensure content is above background elements */
       }
@@ -181,8 +279,13 @@
       /* Responsive Adjustments */
       @media (max-width: 768px) {
         .hero {
-          min-height: 80vh; /* Slightly taller on mobile */
-          padding: 1.5rem 1rem;
+          /* position: relative; */
+
+          min-height: 80vh;
+          padding-top: 0px;
+          padding-right: 1rem;
+          padding-bottom: 1.5rem;
+          padding-left: 1rem;
         }
 
         .hero h1 {
@@ -191,6 +294,41 @@
 
         .hero p {
           font-size: clamp(1rem, 4vw, 1.2rem); /* Adjust font size for mobile */
+        }
+
+        .nav-links {
+          display: none; /* Hide desktop nav on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background: white;
+          padding: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          z-index: 100;
+        }
+
+        .nav-links.active {
+          display: flex; /* Show mobile nav when active */
+        }
+
+        .mobile-menu-btn {
+          display: flex; /* Show mobile menu button on small screens */
+        }
+
+        .header-content {
+          position: relative;
+        }
+
+        .modal-content {
+          width: 90%;
+          padding: 20px;
+          margin: 0 auto;
+        }
+
+        .qr-image {
+          max-width: 80%;
         }
       }
 
@@ -343,8 +481,8 @@
       }
 
       .campaign-image img {
-        width: 100%; 
-        height: 100%; 
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: 8px 8px 0 0;
       }
@@ -580,7 +718,6 @@
   </head>
   <body>
     <header>
-
       <div class="container">
         <div class="header-content">
           <div class="logo">
@@ -611,20 +748,60 @@
               हिंदी
             </button>
 
-            <a href="#donate" class="donate-btn lang-english">DONATE NOW</a>
-            <a href="#donate" class="donate-btn lang-hindi">अभी दान करें</a>
-            <a href="#donate" class="donate-btn lang-gujarati">હવે દાન કરો</a>
+            <a
+              href="#donate"
+              class="donate-btn lang-english"
+              onclick="openDonatePopup(event)"
+              >DONATE NOW</a
+            >
+            <a
+              href="#donate"
+              class="donate-btn lang-hindi"
+              onclick="openDonatePopup(event)"
+              >अभी दान करें</a
+            >
+            <a
+              href="#donate"
+              class="donate-btn lang-gujarati"
+              onclick="openDonatePopup(event)"
+              >હવે દાન કરો</a
+            >
           </nav>
 
-          <button
-            class="mobile-menu-btn"
-            onclick="alert('Mobile menu - please implement if needed')"
-          >
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
             ☰
           </button>
         </div>
       </div>
     </header>
+
+    <div id="donateModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Scan to Donate</h2>
+          <button class="close-btn" onclick="closeDonatePopup()">
+            &times;
+          </button>
+        </div>
+
+        <p class="modal-text">
+          Scan the QR code below with your phone camera or UPI app to donate
+        </p>
+
+        <!-- Replace this with your actual QR code image -->
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=yourname@bank&pn=YourName&am=&tn=Donation"
+          alt="Donation QR Code"
+          class="qr-image"
+        />
+
+        <p class="modal-text">Thank you for your generous support!</p>
+
+        <button class="close-modal-btn" onclick="closeDonatePopup()">
+          Close
+        </button>
+      </div>
+    </div>
 
     <section id="home" class="hero">
       <div class="container">
@@ -879,7 +1056,7 @@
               <!-- <i data-lucide="trophy"></i> -->
               <!-- 🏆 -->
               <img
-                src="https://blog.letsendorse.com/wp-content/uploads/2018/08/Khel-khel-mein-1.jpg"
+                src="https://images.yourstory.com/cs/wordpress/2017/06/DSC_6575.jpg?fm=png&auto=format&blur=500"
                 alt="Campaign Trophy"
               />
             </div>
@@ -1153,30 +1330,22 @@
             <h3 class="lang-gujarati">અમારો સંપર્ક કરો</h3>
 
             <p class="lang-english">
-              Phone No.: 9023306569<br/>
-              5th Floor - A 506, Premium House
-              Nehru Bridge, Ashram Road
-              Opposite Gandhi Gram Railway Station
-              Ellis Bridge, Ahmedabad
+              Phone No.: 9023306569<br />
+              5th Floor - A 506, Premium House Nehru Bridge, Ashram Road
+              Opposite Gandhi Gram Railway Station Ellis Bridge, Ahmedabad
               Gujarat - 380009
             </p>
 
             <p class="lang-hindi">
-              फ़ोन नं.: 9023306569<br/>
-              5वीं मंजिल - ए 506, प्रीमियम हाउस
-              नेहरू ब्रिज, आश्रम रोड
-              गांधी ग्राम रेलवे स्टेशन के सामने
-              एलिस ब्रिज, अहमदाबाद
-              गुजरात - 380009
+              फ़ोन नं.: 9023306569<br />
+              5वीं मंजिल - ए 506, प्रीमियम हाउस नेहरू ब्रिज, आश्रम रोड गांधी
+              ग्राम रेलवे स्टेशन के सामने एलिस ब्रिज, अहमदाबाद गुजरात - 380009
             </p>
 
             <p class="lang-gujarati">
-              ફોન નં.: 9023306569<br/>
-              5મી મંજિલ - એ 506, પ્રીમિયમ હાઉસ
-              નેહરુ બ્રિજ, આશ્રમ રોડ
-              ગાંધી ગ્રામ રેલવે સ્ટેશનની સામે
-              એલિસ બ્રિજ, અમદાવાદ
-              ગુજરાત - 380009
+              ફોન નં.: 9023306569<br />
+              5મી મંજિલ - એ 506, પ્રીમિયમ હાઉસ નેહરુ બ્રિજ, આશ્રમ રોડ ગાંધી
+              ગ્રામ રેલવે સ્ટેશનની સામે એલિસ બ્રિજ, અમદાવાદ ગુજરાત - 380009
             </p>
           </div>
 
@@ -1382,6 +1551,59 @@
             }
         `;
       document.head.appendChild(style);
+
+      function openDonatePopup(e) {
+        e.preventDefault();
+        document.getElementById("donateModal").classList.add("active");
+      }
+
+      function closeDonatePopup() {
+        document.getElementById("donateModal").classList.remove("active");
+      }
+
+      // Close popup when clicking outside the modal content
+      window.onclick = function (event) {
+        const modal = document.getElementById("donateModal");
+        if (event.target === modal) {
+          closeDonatePopup();
+        }
+      };
+
+      // Close popup with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeDonatePopup();
+        }
+      });
+
+      function toggleMobileMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+
+      function openDonatePopup(e) {
+        e.preventDefault();
+        document.getElementById("donateModal").classList.add("active");
+      }
+
+      function closeDonatePopup() {
+        document.getElementById("donateModal").classList.remove("active");
+      }
+
+      // Close popup when clicking outside the modal content
+      window.onclick = function (event) {
+        const modal = document.getElementById("donateModal");
+        if (event.target === modal) {
+          closeDonatePopup();
+        }
+      };
+
+      // Close popup with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeDonatePopup();
+        }
+      });
     </script>
   </body>
 </html>
