@@ -189,6 +189,9 @@
         cursor: pointer;
         font-weight: bold;
         transition: background 0.3s;
+        display: block;
+        margin: 0 auto;
+        min-width: 120px;
       }
 
       .close-modal-btn:hover {
@@ -212,8 +215,6 @@
         font-size: 24px;
         cursor: pointer;
       }
-
-      /* Hero Section */
 
       /* Hero Section */
       .hero {
@@ -276,6 +277,149 @@
         display: block; /* Show active language content */
       }
 
+      /* Gallery Modal Styles - Add after your existing modal styles */
+      .gallery-modal .modal-content {
+        max-width: 900px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      /* Tab Styles */
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #eee;
+      }
+
+      .tab {
+        padding: 12px 25px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.3s;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
+      }
+
+      .tab:hover {
+        color: #e74c3c;
+      }
+
+      .tab.active {
+        color: #e74c3c;
+        border-bottom-color: #e74c3c;
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Gallery Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+        aspect-ratio: 1;
+        background: #f0f0f0;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        pointer-events: none;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 1001;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox.active {
+        display: flex;
+      }
+
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+      }
+
+      .lightbox-content img,
+      .lightbox-content video {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 5px;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1002;
+      }
+
       /* Responsive Adjustments */
       @media (max-width: 768px) {
         .hero {
@@ -329,6 +473,33 @@
 
         .qr-image {
           max-width: 80%;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 10px;
+        }
+
+        .tabs {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .tab {
+          width: 100%;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+          border-left: 3px solid transparent;
+          margin-bottom: 0;
+        }
+
+        .tab.active {
+          border-bottom-color: #eee;
+          border-left-color: #e74c3c;
+        }
+
+        .gallery-modal .modal-content {
+          padding: 20px;
         }
       }
 
@@ -744,6 +915,16 @@
             <a href="#contact" class="lang-hindi">संपर्क</a>
             <a href="#contact" class="lang-gujarati">સંપર્ક</a>
 
+            <a href="#" class="lang-hindi" onclick="openGallery(event)"
+              >गैलरी</a
+            >
+            <a href="#" class="lang-english" onclick="openGallery(event)"
+              >GALLERY</a
+            >
+            <a href="#" class="lang-gujarati" onclick="openGallery(event)"
+              >ગેલરી</a
+            >
+
             <button class="lang-toggle" onclick="toggleLanguage()">
               हिंदी
             </button>
@@ -778,14 +959,23 @@
     <div id="donateModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Scan to Donate</h2>
+          <h2 class="lang-english">Scan to Donate</h2>
+          <h2 class="lang-hindi">दान के लिए स्कैन करें</h2>
+          <h2 class="lang-gujarati">દાન કરવા માટે સ્કેન કરો</h2>
           <button class="close-btn" onclick="closeDonatePopup()">
             &times;
           </button>
         </div>
 
-        <p class="modal-text">
+        <p class="modal-text lang-english">
           Scan the QR code below with your phone camera or UPI app to donate
+        </p>
+        <p class="modal-text lang-hindi">
+          दान करने के लिए अपने फोन कैमरा या UPI ऐप से नीचे दिए गए QR कोड को
+          स्कैन करें
+        </p>
+        <p class="modal-text lang-gujarati">
+          દાન કરવા માટે તમારા ફોન કેમેરા અથવા UPI એપ વડે નીચેનો QR કોડ સ્કેન કરો
         </p>
 
         <!-- Replace this with your actual QR code image -->
@@ -795,12 +985,91 @@
           class="qr-image"
         />
 
-        <p class="modal-text">Thank you for your generous support!</p>
+        <p class="modal-text lang-english">
+          Thank you for your generous support!
+        </p>
+        <p class="modal-text lang-hindi">आपके उदार समर्थन के लिए धन्यवाद!</p>
+        <p class="modal-text lang-gujarati">તમારા ઉદાર સહયોગ માટે આભાર!</p>
 
-        <button class="close-modal-btn" onclick="closeDonatePopup()">
+        <button
+          class="close-modal-btn lang-english"
+          onclick="closeDonatePopup()"
+        >
           Close
         </button>
+        <button class="close-modal-btn lang-hindi" onclick="closeDonatePopup()">
+          बंद करें
+        </button>
+        <button
+          class="close-modal-btn lang-gujarati"
+          onclick="closeDonatePopup()"
+        >
+          બંધ કરો
+        </button>
       </div>
+    </div>
+
+    <!-- Gallery Modal - Add after the donateModal div -->
+    <div id="galleryModal" class="modal gallery-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="lang-english">Gallery</h2>
+          <h2 class="lang-hindi">गैलरी</h2>
+          <h2 class="lang-gujarati">ગેલરી</h2>
+          <button class="close-btn" onclick="closeGallery()">&times;</button>
+        </div>
+
+        <div class="tabs">
+          <button
+            class="tab active lang-english"
+            onclick="switchTab('images', event)"
+          >
+            Images
+          </button>
+          <button class="tab lang-english" onclick="switchTab('videos', event)">
+            Videos
+          </button>
+
+          <button
+            class="tab active lang-hindi"
+            onclick="switchTab('images', event)"
+          >
+            चित्र
+          </button>
+          <button class="tab lang-hindi" onclick="switchTab('videos', event)">
+            वीडियो
+          </button>
+
+          <button
+            class="tab active lang-gujarati"
+            onclick="switchTab('images', event)"
+          >
+            છબીઓ
+          </button>
+          <button
+            class="tab lang-gujarati"
+            onclick="switchTab('videos', event)"
+          >
+            વીડિયો
+          </button>
+        </div>
+
+        <!-- Images Tab -->
+        <div id="imagesTab" class="tab-content active">
+          <div class="gallery-grid" id="imagesGrid"></div>
+        </div>
+
+        <!-- Videos Tab -->
+        <div id="videosTab" class="tab-content">
+          <div class="gallery-grid" id="videosGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <div class="lightbox-content" id="lightboxContent"></div>
     </div>
 
     <section id="home" class="hero">
@@ -1446,7 +1715,9 @@
 
     <script>
       // Initialize Lucide icons
-      lucide.createIcons();
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
 
       function toggleLanguage() {
         const body = document.body;
@@ -1604,6 +1875,131 @@
           closeDonatePopup();
         }
       });
+
+      // Gallery data arrays
+      const galleryImages = [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPVXJ5ujkz4OtwmMhA3xjLMb5JTmIJkpYBMQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFVUemTM4kOMa3-H9tVFFdJTvuQe0HapqZcw&s",
+      ];
+
+      const galleryVideos = [
+        "https://www.w3schools.com/html/mov_bbb.mp4",
+        "https://www.w3schools.com/html/movie.mp4",
+      ];
+
+      function loadGallery() {
+        const imagesGrid = document.getElementById("imagesGrid");
+        const videosGrid = document.getElementById("videosGrid");
+
+        if (!imagesGrid || !videosGrid) return;
+
+        // Load images
+        imagesGrid.innerHTML = galleryImages
+          .map(
+            (img, index) => `
+    <div class="gallery-item" onclick="openLightbox('image', ${index})">
+      <img src="${img}" alt="Gallery image ${index + 1}" loading="lazy">
+    </div>
+  `
+          )
+          .join("");
+
+        // Load videos
+        videosGrid.innerHTML = galleryVideos
+          .map(
+            (video, index) => `
+    <div class="gallery-item" onclick="openLightbox('video', ${index})">
+      <video src="${video}" preload="metadata"></video>
+      <div class="video-overlay">▶</div>
+    </div>
+  `
+          )
+          .join("");
+      }
+
+      function openGallery(e) {
+        if (e) e.preventDefault();
+
+        const modal = document.getElementById("galleryModal");
+        modal.classList.add("active");
+
+        setTimeout(() => {
+          loadGallery();
+        }, 100);
+      }
+
+      function closeGallery() {
+        document.getElementById("galleryModal").classList.remove("active");
+      }
+
+      function switchTab(tabName, event) {
+        const tabs = document.querySelectorAll(".tabs .tab");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab) => tab.classList.remove("active"));
+        contents.forEach((content) => content.classList.remove("active"));
+
+        if (event && event.target) {
+          event.target.classList.add("active");
+        }
+
+        const targetContent = document.getElementById(tabName + "Tab");
+        if (targetContent) {
+          targetContent.classList.add("active");
+        }
+      }
+
+      function openLightbox(type, index) {
+        const lightbox = document.getElementById("lightbox");
+        const content = document.getElementById("lightboxContent");
+
+        if (type === "image") {
+          content.innerHTML = `<img src="${galleryImages[index]}" alt="Gallery image">`;
+        } else {
+          content.innerHTML = `<video src="${galleryVideos[index]}" controls autoplay></video>`;
+        }
+
+        lightbox.classList.add("active");
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("active");
+        const content = document.getElementById("lightboxContent");
+        content.innerHTML = "";
+      }
+
+      // Close modals when clicking outside
+      window.addEventListener("click", function (event) {
+        const donateModal = document.getElementById("donateModal");
+        const galleryModal = document.getElementById("galleryModal");
+        const lightbox = document.getElementById("lightbox");
+
+        if (event.target === donateModal) {
+          closeDonatePopup();
+        }
+
+        if (event.target === galleryModal) {
+          closeGallery();
+        }
+
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeDonatePopup();
+          closeGallery();
+          closeLightbox();
+        }
+      });
+
+      // Initialize Lucide icons
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
     </script>
   </body>
 </html>
