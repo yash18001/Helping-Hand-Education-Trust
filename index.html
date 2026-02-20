@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -55,10 +55,22 @@
       .logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 20px;  /* Adjust gap as needed */
         font-size: 20px;
         font-weight: bold;
         color: #e74c3c;
+      }
+
+      .logo-image {
+        height: 50px; /* Adjust size as needed */
+        width: auto;
+        object-fit: contain;
+      }
+
+      .logo-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
       .nav-links {
@@ -890,11 +902,19 @@
     <header>
       <div class="container">
         <div class="header-content">
+        
           <div class="logo">
-            <i data-lucide="heart-handshake"></i>
-            <span class="lang-english">HELPING HAND EDUCATION TRUST</span>
-            <span class="lang-hindi">हेल्पिंग हैंड एजुकेशन ट्रस्ट</span>
-            <span class="lang-gujarati">હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ</span>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACwQbclRTv_GpVGszt6UzQUjOHz0EZauwxA&s"
+              alt="Helping Hand Logo"
+              class="logo-image"
+            />
+            <div class="logo-text">
+              <span class="lang-english" style="line-height: 1.2"
+                >HELPING HAND<br />EDUCATION TRUST</span>
+              <span class="lang-hindi">हेल्पिंग हैंड एजुकेशन ट्रस्ट</span>
+              <span class="lang-gujarati">હેલ્પિંગ હેન્ડ એજ્યુકેશન ટ્રસ્ટ</span>
+            </div>
           </div>
 
           <nav class="nav-links">
@@ -1899,7 +1919,7 @@
     <div class="gallery-item" onclick="openLightbox('image', ${index})">
       <img src="${img}" alt="Gallery image ${index + 1}" loading="lazy">
     </div>
-  `
+  `,
           )
           .join("");
 
@@ -1911,7 +1931,7 @@
       <video src="${video}" preload="metadata"></video>
       <div class="video-overlay">▶</div>
     </div>
-  `
+  `,
           )
           .join("");
       }
